@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Atendimento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>🎧 Painel de Atendimento</h1>
+    <p>Sistema simples de chamados de suporte</p>
+  </header>
+
+  <main class="container">
+    <section class="resumo" id="resumo" aria-label="Resumo dos chamados"></section>
+
+    <section class="card">
+      <h2>Novo chamado</h2>
+      <form id="form-chamado">
+        <label>Cliente
+          <input type="text" id="cliente" required maxlength="60" placeholder="Nome do cliente">
+        </label>
+        <label>Assunto
+          <input type="text" id="assunto" required maxlength="80" placeholder="Ex.: Não consigo acessar minha conta">
+        </label>
+        <label>Descrição
+          <textarea id="descricao" rows="3" maxlength="300" placeholder="Descreva o problema"></textarea>
+        </label>
+        <label>Prioridade
+          <select id="prioridade">
+            <option value="baixa">Baixa</option>
+            <option value="media" selected>Média</option>
+            <option value="alta">Alta</option>
+          </select>
+        </label>
+        <button type="submit">Abrir chamado</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Chamados</h2>
+      <div class="filtros">
+        <input type="search" id="busca" placeholder="Buscar por cliente ou assunto">
+        <select id="filtro-status">
+          <option value="todos">Todos os status</option>
+          <option value="aberto">Aberto</option>
+          <option value="andamento">Em andamento</option>
+          <option value="resolvido">Resolvido</option>
+        </select>
+        <select id="filtro-prioridade">
+          <option value="todas">Todas as prioridades</option>
+          <option value="alta">Alta</option>
+          <option value="media">Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+      <ul id="lista" class="lista"></ul>
+      <p id="vazio" class="vazio" hidden>Nenhum chamado encontrado.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">Feito com HTML, CSS e JavaScript puro.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
